@@ -1,0 +1,16 @@
+
+{
+  "name": "emoji-chatter",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Real-time anonymous chat application with emoji support",
+  "main": "simple-server.js",
+  "scripts": {
+    "start": "node simple-server.js",
+    "dev": "node simple-server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "ws": "^8.18.0"
+  }
+}
