@@ -621,7 +621,7 @@
 
             connect() {
                 const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-                const wsUrl = `${protocol}//${window.location.host}/ws`;
+                const wsUrl = `${protocol}//${window.location.host}/chat/ws`;
 
                 console.log(`Connecting to WebSocket: ${wsUrl}`);
                 this.ws = new WebSocket(wsUrl);

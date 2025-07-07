@@ -9,6 +9,7 @@ const __dirname = path.dirname(__filename);
 
 // Environment configuration
 const isDevelopment = process.env.NODE_ENV !== 'production';
+// Not possible on shared hosting, need a VPS or dedicated server to handle websockets
 const PRODUCTION_BASE_URL = 'https://rose.dev/chat';
 
 // Log environment info
@@ -55,15 +56,6 @@ let clientIdCounter = 1;
 
 // User identity storage (persistent across sessions)
 const userIdentities = new Map(); // passcode -> { id, username, avatar, clientId , canSendMessages, lastSeen }
-
-function generatePasscode() {
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let result = '';
-  for (let i = 0; i < 100; i++) {
-    result += chars.charAt(Math.floor(Math.random() * chars.length));
-  }
-  return result;
-}
 
 function generateUserId() {
   return Math.random().toString(36).substring(2) + Date.now().toString(36);
